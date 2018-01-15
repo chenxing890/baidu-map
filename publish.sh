@@ -1,0 +1,1 @@
+./gradlew clean build generatePomFileForReleasePublication bintrayUpload -PbintrayUser=chenxing890 -PbintrayKey=e1ba13b4c516fe6e931a64e7758c26f793971b43 -PdryRun=false
