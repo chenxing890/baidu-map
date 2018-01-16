@@ -33,7 +33,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile files('libs/BaiduLBS_Android.jar')
 }
 
 
@@ -70,7 +69,7 @@ publish {
     userOrg = 'chenxing890'
     groupId = 'com.baidu.mapapi'
     artifactId = 'loc'
-    publishVersion = '7.3'
+    publishVersion = '7.3.0'
     desc = '百度地图sdk'
     website = 'https://github.com/chenxing890/baidu-map.git'
 }

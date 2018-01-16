@@ -1,1 +1,1 @@
-include ':map', ':loc'
+include ':map', ':loc', ':base'
