@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
+
 android {
     compileSdkVersion 26
 
@@ -36,42 +37,4 @@ dependencies {
 
 }
 
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-//生成Javadoc文档
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-//文档打包成jar
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-//拷贝javadoc文件
-task copyDoc(type: Copy) {
-    from "${buildDir}/docs/"
-    into "docs"
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-
-publish {
-    userOrg = 'chenxing890'
-    groupId = 'com.baidu.mapapi'
-    artifactId = 'map'
-    publishVersion = '4.5.3'
-    desc = '百度地图sdk'
-    website = 'https://github.com/chenxing890/baidu-map.git'
-}
-
+apply from: '../maven_push.gradle'
